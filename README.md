@@ -6,6 +6,8 @@ App móvil para calcular el Índice de Masa Corporal (IMC), mostrar un diagnóst
 - Desarrollo de aplicaciones móviles con React Native
 - Desarrollado con React Native CLI + TypeScript
 
+![Captura de la aplicación Calculadora IMC](documents/calculadora_imc.png)
+
 ## Descripción
 
 La aplicación permite ingresar los datos de un paciente, calcular su IMC, visualizar el resultado en un modal y agregarlo a un historial. También muestra estadísticas básicas como total de registros, IMC promedio e IMC máximo.
