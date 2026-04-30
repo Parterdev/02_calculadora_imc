@@ -115,9 +115,3 @@ Ejecutar en iOS:
 
 Paúl Terán  
 Ingeniería Informática - 7mo "A"
-
-## Commit recomendado
-
-`git add README.md`
-
-`git commit -m "docs: add concise readme"`
