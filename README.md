@@ -1,97 +1,123 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Aplicación móvil IMC - Semana 2
 
-# Getting Started
+App móvil para calcular el Índice de Masa Corporal (IMC), mostrar un diagnóstico de salud y guardar registros en un historial temporal.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+- Ingeniería Informática - 7mo "A"
+- Desarrollo de aplicaciones móviles con React Native
+- Desarrollado con React Native CLI + TypeScript
 
-## Step 1: Start Metro
+## Descripción
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+La aplicación permite ingresar los datos de un paciente, calcular su IMC, visualizar el resultado en un modal y agregarlo a un historial. También muestra estadísticas básicas como total de registros, IMC promedio e IMC máximo.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+El proyecto fue desarrollado tomando como referencia el documento de la actividad ubicado en la carpeta `documents/` del repositorio.
 
-```sh
-# Using npm
-npm start
+## Funcionalidades
 
-# OR using Yarn
-yarn start
-```
+- Formulario para ingresar nombre, peso y altura.
+- Validaciones con Alert.
+- Cálculo de IMC con dos decimales.
+- Diagnóstico según el rango de IMC.
+- Modal con el resultado calculado.
+- Agregar registros al historial.
+- Eliminar registros individuales.
+- Limpiar todo el historial.
+- Estadísticas: registros, promedio y máximo.
 
-## Step 2: Build and run your app
+## Diagnósticos
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+| Rango IMC | Diagnóstico |
+|---|---|
+| Menor a 18.5 | Bajo peso |
+| 18.5 a 24.9 | Peso normal |
+| 25.0 a 29.9 | Sobrepeso |
+| 30 o más | Obesidad |
 
-### Android
+## Datos de prueba utilizados
 
-```sh
-# Using npm
-npm run android
+| Nombre | Peso | Altura | IMC | Diagnóstico |
+|---|---:|---:|---:|---|
+| Ana Torres | 65 kg | 1.68 m | 23.03 | Peso normal |
+| Carlos Ruiz | 82 kg | 1.70 m | 28.37 | Sobrepeso |
+| Luis Mora | 95 kg | 1.72 m | 32.11 | Obesidad |
 
-# OR using Yarn
-yarn android
-```
+Con estos tres registros, las estadísticas esperadas son:
 
-### iOS
+| Registros | Promedio IMC | IMC máximo |
+|---:|---:|---:|
+| 3 | 27.84 | 32.11 |
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## Estructura principal
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+- `src/components/BmiForm.tsx`
+- `src/components/BmiResult.tsx`
+- `src/components/HistoryList.tsx`
+- `src/components/StatsCard.tsx`
+- `src/constants/colors.ts`
+- `src/screens/HomeScreen.tsx`
+- `src/styles/globalStyles.ts`
+- `src/types/index.ts`
+- `src/utils/bmi.ts`
+- `src/utils/history.ts`
+- `src/utils/stats.ts`
 
-```sh
-bundle install
-```
+## Componentes utilizados de React Native
 
-Then, and every time you update your native dependencies, run:
+- View
+- Text
+- TextInput
+- TouchableOpacity
+- ScrollView
+- KeyboardAvoidingView
+- Modal
+- Alert
+- StatusBar
+- StyleSheet
 
-```sh
-bundle exec pod install
-```
+## Requerimientos técnicos cumplidos
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+- interface Registro
+- type Diagnostico
+- useState tipado
+- Formulario controlado
+- Estilos con StyleSheet.create()
+- Color dinámico por diagnóstico
+- Función calcularIMC() separada
+- .map() para renderizar historial
+- .filter() para eliminar registros
+- .reduce() para estadísticas
 
-```sh
-# Using npm
-npm run ios
+## Instalación y ejecución
 
-# OR using Yarn
-yarn ios
-```
+Instalar dependencias:
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+`npm install`
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+Ejecutar Metro:
 
-## Step 3: Modify your app
+`npm run start`
 
-Now that you have successfully run the app, let's make changes!
+Ejecutar en Android:
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+`npm run android`
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+Ejecutar en iOS:
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+`cd ios`
 
-## Congratulations! :tada:
+`pod install`
 
-You've successfully run and modified your React Native App. :partying_face:
+`cd ..`
 
-### Now what?
+`npm run ios`
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## Autor
 
-# Troubleshooting
+Paúl Terán  
+Ingeniería Informática - 7mo "A"
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## Commit recomendado
 
-# Learn More
+`git add README.md`
 
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+`git commit -m "docs: add concise readme"`
