@@ -1,0 +1,138 @@
+INSTRUCCIONES DE ACCESO AL REPOSITORIO
+Aplicación móvil IMC - Semana 2
+
+Repositorio GitHub:
+https://github.com/Parterdev/02_calculadora_imc
+
+DESCRIPCIÓN DEL PROYECTO
+
+Aplicación móvil desarrollada con React Native CLI y TypeScript para calcular el Índice de Masa Corporal (IMC), mostrar un diagnóstico de salud y guardar registros en un historial temporal.
+
+La aplicación permite ingresar los datos de un paciente, calcular su IMC, visualizar el resultado en un modal y agregarlo a un historial. También muestra estadísticas básicas como total de registros, IMC promedio e IMC máximo.
+
+El proyecto fue desarrollado tomando como referencia el documento de la actividad ubicado en la carpeta documents/ del repositorio.
+
+DATOS ACADÉMICOS
+
+Carrera: Ingeniería Informática
+Nivel: 7mo "A"
+Asignatura: Desarrollo de aplicaciones móviles con React Native
+Autor: Paúl Terán
+
+FUNCIONALIDADES PRINCIPALES
+
+- Formulario para ingresar nombre, peso y altura.
+- Validaciones con Alert.
+- Cálculo de IMC con dos decimales.
+- Diagnóstico según el rango de IMC.
+- Modal con el resultado calculado.
+- Agregar registros al historial.
+- Eliminar registros individuales.
+- Limpiar todo el historial.
+- Estadísticas: registros, promedio y máximo.
+
+DIAGNÓSTICOS IMPLEMENTADOS
+
+- IMC menor a 18.5: Bajo peso.
+- IMC entre 18.5 y 24.9: Peso normal.
+- IMC entre 25.0 y 29.9: Sobrepeso.
+- IMC mayor o igual a 30: Obesidad.
+
+DATOS DE PRUEBA UTILIZADOS
+
+1. Ana Torres
+   Peso: 65 kg
+   Altura: 1.68 m
+   IMC: 23.03
+   Diagnóstico: Peso normal
+
+2. Carlos Ruiz
+   Peso: 82 kg
+   Altura: 1.70 m
+   IMC: 28.37
+   Diagnóstico: Sobrepeso
+
+3. Luis Mora
+   Peso: 95 kg
+   Altura: 1.72 m
+   IMC: 32.11
+   Diagnóstico: Obesidad
+
+Estadísticas esperadas con estos registros:
+
+- Total de registros: 3
+- IMC promedio: 27.84
+- IMC máximo: 32.11
+
+ESTRUCTURA PRINCIPAL DEL PROYECTO
+
+- src/components/BmiForm.tsx
+- src/components/BmiResult.tsx
+- src/components/HistoryList.tsx
+- src/components/StatsCard.tsx
+- src/constants/colors.ts
+- src/screens/HomeScreen.tsx
+- src/styles/globalStyles.ts
+- src/types/index.ts
+- src/utils/bmi.ts
+- src/utils/history.ts
+- src/utils/stats.ts
+
+COMPONENTES UTILIZADOS DE REACT NATIVE
+
+- View
+- Text
+- TextInput
+- TouchableOpacity
+- ScrollView
+- KeyboardAvoidingView
+- Modal
+- Alert
+- StatusBar
+- StyleSheet
+
+REQUERIMIENTOS TÉCNICOS CUMPLIDOS
+
+- interface Registro
+- type Diagnostico
+- useState tipado
+- Formulario controlado
+- Estilos con StyleSheet.create()
+- Color dinámico por diagnóstico
+- Función calcularIMC() separada
+- .map() para renderizar historial
+- .filter() para eliminar registros
+- .reduce() para estadísticas
+
+INSTRUCCIONES DE INSTALACIÓN Y EJECUCIÓN
+
+1. Clonar el repositorio:
+
+git clone https://github.com/Parterdev/02_calculadora_imc.git
+
+2. Ingresar al proyecto:
+
+cd 02_calculadora_imc
+
+3. Instalar dependencias:
+
+npm install
+
+4. Ejecutar Metro:
+
+npm run start
+
+5. Ejecutar en Android:
+
+npm run android
+
+6. Ejecutar en iOS:
+
+cd ios
+pod install
+cd ..
+npm run ios
+
+NOTA FINAL
+
+El repositorio contiene el código fuente completo de la aplicación, el documento de requerimientos en la carpeta documents/ y la implementación funcional solicitada para la actividad de la Semana 2.
